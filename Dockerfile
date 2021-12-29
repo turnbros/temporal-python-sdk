@@ -13,5 +13,5 @@ RUN python setup.py bdist_wheel && \
 
 FROM python:3.8-alpine3.15
 
-COPY --from=builder /tmp/wheels /tmp/
+COPY --from=builder /tmp/wheels /tmp/wheels
 RUN pip install --no-index --find-links=/tmp/wheels temporal_python_sdk
